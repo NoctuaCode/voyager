@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
-#include "features/custom_shift_keys.h"
+//#include "features/custom_shift_keys.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
@@ -10,9 +10,9 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_DLR,           KC_EXLM,               KC_LBRC,               KC_LCBR,               KC_LPRN,               KC_AMPR,                                        KC_PERC,                 KC_RPRN,               KC_RCBR,               KC_RBRC,               KC_ASTR,               KC_BSLS,
-    KC_AT,            KC_SCLN,               KC_COMMA,               KC_DOT,                KC_P,                  KC_Y,                                           KC_F,                    KC_G,                  KC_C,                  KC_R,                  KC_L,                  KC_SLASH,
-    KC_EQL,           MT(MOD_LGUI, KC_A),                  MT(MOD_LALT, KC_O),                  MT(MOD_LCTL, KC_E),                  MT(MOD_LSFT, KC_U),                  KC_I,                                           KC_D,                    MT(MOD_RSFT, KC_H),                  MT(MOD_RCTL, KC_T),                  MT(MOD_LALT, KC_N),                  MT(MOD_RGUI, KC_S),                  KC_MINUS,
+    KC_DLR,     KC_PLUS,               KC_LBRC,               KC_LCBR,               KC_LPRN,               KC_AMPR,                                        KC_EQL,                  KC_RPRN,               KC_RCBR,               KC_RBRC,               KC_ASTR,               KC_EXLM,
+    KC_AT,      KC_SCLN,               KC_COMMA,              KC_DOT,                KC_P,                  KC_Y,                                           KC_F,                    KC_G,                  KC_C,                  KC_R,                  KC_L,                  KC_SLASH,
+    KC_BSLS,    MT(MOD_LGUI, KC_A),    MT(MOD_LALT, KC_O),    MT(MOD_LCTL, KC_E),    MT(MOD_LSFT, KC_U),    MT(KC_HYPER, KC_I),                             MT(KC_MEH, KC_D),        MT(MOD_RSFT, KC_H),    MT(MOD_RCTL, KC_T),    MT(MOD_LALT, KC_N),    MT(MOD_RGUI, KC_S),    KC_MINUS,
     C(KC_A),    KC_QUOTE,              KC_Q,                  KC_J,                  KC_K,                  KC_X,                                           KC_B,                    KC_M,                  KC_W,                  KC_V,                  KC_Z,                  KC_GRAVE,
                                                                                            LT(1, KC_BSPC), KC_TAB,                        KC_ENTER,  KC_SPACE
   ),
@@ -25,60 +25,79 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-const custom_shift_key_t custom_shift_keys[] = {
-	{ KC_DLR,  KC_TILD },
-	{ KC_EXLM, KC_1},
-	{ KC_LBRC, KC_2 },
-	{ KC_LCBR, KC_3 },
-	{ KC_LPRN, KC_4   },
-	{ KC_AMPR, KC_5   },
-	{ KC_PERC, KC_6 },
-	{ KC_RPRN, KC_7 },
-	{ KC_RCBR, KC_8 },
-	{ KC_RBRC, KC_9 },
-	{ KC_ASTR, KC_0 },
-	{ KC_GRAVE, KC_PIPE },
-	{ KC_AT, KC_CIRC },
-	{ KC_BSLS,  KC_HASH },
-	{ KC_BSPC, KC_DEL },
-    { KC_ENTER, KC_ESC }
-};
+//const custom_shift_key_t custom_shift_keys[] = {
+//	{ KC_DLR,  KC_TILD },
+//	{ KC_EXLM, KC_1},
+//	{ KC_LBRC, KC_2 },
+//	{ KC_LCBR, KC_3 },
+//	{ KC_LPRN, KC_4   },
+//	{ KC_AMPR, KC_5   },
+//	{ KC_PERC, KC_6 },
+//	{ KC_RPRN, KC_7 },
+//	{ KC_RCBR, KC_8 },
+//	{ KC_RBRC, KC_9 },
+//	{ KC_ASTR, KC_0 },
+//	{ KC_GRAVE, KC_PIPE },
+//	{ KC_AT, KC_CIRC },
+//	{ KC_BSLS,  KC_HASH },
+//	{ KC_BSPC, KC_DEL },
+  //  { KC_ENTER, KC_ESC }
+//};
+
+// Shift keys
+const key_override_t dollar_tilde = ko_make_basic(MOD_MASK_SHIFT, KC_DLR, KC_TILD);
+const key_override_t plus_one = ko_make_basic(MOD_MASK_SHIFT, KC_PLUS, KC_1);
+const key_override_t lbrc_two = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_2);
+const key_override_t lcbr_three = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_3);
+const key_override_t lprn_four = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_4);
+const key_override_t ampr_five = ko_make_basic(MOD_MASK_SHIFT, KC_AMPR, KC_5);
+const key_override_t equal_six = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_6);
+const key_override_t rprn_seven = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_7);
+const key_override_t rcbr_eight = ko_make_basic(MOD_MASK_SHIFT, KC_RCBR, KC_8);
+const key_override_t rbrc_nine = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, KC_9);
+const key_override_t astr_zero = ko_make_basic(MOD_MASK_SHIFT, KC_ASTR, KC_0);
+const key_override_t exlm_percent = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, KC_PERC);
+const key_override_t at_circ = ko_make_basic(MOD_MASK_SHIFT, KC_AT, KC_CIRC);
+const key_override_t bsls_hash = ko_make_basic(MOD_MASK_SHIFT, KC_BSLS, KC_HASH);
+const key_override_t grave_pipe = ko_make_basic(MOD_MASK_SHIFT, KC_GRAVE, KC_PIPE);
+const key_override_t bspc_del = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+const key_override_t enter_esc = ko_make_basic(MOD_MASK_SHIFT, KC_ENTER, KC_ESC);
 
 // Alt keys
-const key_override_t alt_one = ko_make_basic(MOD_MASK_ALT, KC_EXLM, A(KC_1));
+const key_override_t alt_one = ko_make_basic(MOD_MASK_ALT, KC_PLUS, A(KC_1));
 const key_override_t alt_two = ko_make_basic(MOD_MASK_ALT, KC_LBRC, A(KC_2));
 const key_override_t alt_three = ko_make_basic(MOD_MASK_ALT, KC_LCBR, A(KC_3));
 const key_override_t alt_four = ko_make_basic(MOD_MASK_ALT, KC_LPRN, A(KC_4));
 const key_override_t alt_five = ko_make_basic(MOD_MASK_ALT, KC_AMPR, A(KC_5));
-const key_override_t alt_six = ko_make_basic(MOD_MASK_ALT, KC_PERC, A(KC_6));
+const key_override_t alt_six = ko_make_basic(MOD_MASK_ALT, KC_EQL, A(KC_6));
 const key_override_t alt_seven = ko_make_basic(MOD_MASK_ALT, KC_RPRN, A(KC_7));
 const key_override_t alt_eight = ko_make_basic(MOD_MASK_ALT, KC_RCBR, A(KC_8));
 const key_override_t alt_nine = ko_make_basic(MOD_MASK_ALT, KC_RBRC, A(KC_9));
 const key_override_t alt_zero = ko_make_basic(MOD_MASK_ALT, KC_ASTR, A(KC_0));
 
 // CTRL keys
-const key_override_t ctrl_one = ko_make_basic(MOD_MASK_CTRL, KC_EXLM, C(KC_1));
-const key_override_t ctrl_two = ko_make_basic(MOD_MASK_CTRL, KC_LBRC, C(KC_2));
-const key_override_t ctrl_three = ko_make_basic(MOD_MASK_CTRL, KC_LCBR, C(KC_3));
-const key_override_t ctrl_four = ko_make_basic(MOD_MASK_CTRL, KC_LPRN, C(KC_4));
-const key_override_t ctrl_five = ko_make_basic(MOD_MASK_CTRL, KC_AMPR, C(KC_5));
-const key_override_t ctrl_six = ko_make_basic(MOD_MASK_CTRL, KC_PERC, C(KC_6));
-const key_override_t ctrl_seven = ko_make_basic(MOD_MASK_CTRL, KC_RPRN, C(KC_7));
-const key_override_t ctrl_eight = ko_make_basic(MOD_MASK_CTRL, KC_RCBR, C(KC_8));
-const key_override_t ctrl_nine = ko_make_basic(MOD_MASK_CTRL, KC_RBRC, C(KC_9));
-const key_override_t ctrl_zero = ko_make_basic(MOD_MASK_CTRL, KC_ASTR, C(KC_0));
+//const key_override_t ctrl_one = ko_make_basic(MOD_MASK_CTRL, KC_EXLM, C(KC_1));
+//const key_override_t ctrl_two = ko_make_basic(MOD_MASK_CTRL, KC_LBRC, C(KC_2));
+//const key_override_t ctrl_three = ko_make_basic(MOD_MASK_CTRL, KC_LCBR, C(KC_3));
+//const key_override_t ctrl_four = ko_make_basic(MOD_MASK_CTRL, KC_LPRN, C(KC_4));
+//const key_override_t ctrl_five = ko_make_basic(MOD_MASK_CTRL, KC_AMPR, C(KC_5));
+//const key_override_t ctrl_six = ko_make_basic(MOD_MASK_CTRL, KC_PERC, C(KC_6));
+//const key_override_t ctrl_seven = ko_make_basic(MOD_MASK_CTRL, KC_RPRN, C(KC_7));
+//const key_override_t ctrl_eight = ko_make_basic(MOD_MASK_CTRL, KC_RCBR, C(KC_8));
+//const key_override_t ctrl_nine = ko_make_basic(MOD_MASK_CTRL, KC_RBRC, C(KC_9));
+//const key_override_t ctrl_zero = ko_make_basic(MOD_MASK_CTRL, KC_ASTR, C(KC_0));
 
 // Command keys
-const key_override_t command_one = ko_make_basic(MOD_MASK_GUI, KC_EXLM, G(KC_1));
-const key_override_t command_two = ko_make_basic(MOD_MASK_GUI, KC_LBRC, G(KC_2));
-const key_override_t command_three = ko_make_basic(MOD_MASK_GUI, KC_LCBR, G(KC_3));
-const key_override_t command_four = ko_make_basic(MOD_MASK_GUI, KC_LPRN, G(KC_4));
-const key_override_t command_five = ko_make_basic(MOD_MASK_GUI, KC_AMPR, G(KC_5));
-const key_override_t command_six = ko_make_basic(MOD_MASK_GUI, KC_PERC, G(KC_6));
-const key_override_t command_seven = ko_make_basic(MOD_MASK_GUI, KC_RPRN, G(KC_7));
-const key_override_t command_eight = ko_make_basic(MOD_MASK_GUI, KC_RCBR, G(KC_8));
-const key_override_t command_nine = ko_make_basic(MOD_MASK_GUI, KC_RBRC, G(KC_9));
-const key_override_t command_zero = ko_make_basic(MOD_MASK_GUI, KC_ASTR, G(KC_0));
+//const key_override_t command_one = ko_make_basic(MOD_MASK_GUI, KC_EXLM, G(KC_1));
+//const key_override_t command_two = ko_make_basic(MOD_MASK_GUI, KC_LBRC, G(KC_2));
+//const key_override_t command_three = ko_make_basic(MOD_MASK_GUI, KC_LCBR, G(KC_3));
+//const key_override_t command_four = ko_make_basic(MOD_MASK_GUI, KC_LPRN, G(KC_4));
+//const key_override_t command_five = ko_make_basic(MOD_MASK_GUI, KC_AMPR, G(KC_5));
+//const key_override_t command_six = ko_make_basic(MOD_MASK_GUI, KC_PERC, G(KC_6));
+//const key_override_t command_seven = ko_make_basic(MOD_MASK_GUI, KC_RPRN, G(KC_7));
+//const key_override_t command_eight = ko_make_basic(MOD_MASK_GUI, KC_RCBR, G(KC_8));
+//const key_override_t command_nine = ko_make_basic(MOD_MASK_GUI, KC_RBRC, G(KC_9));
+//const key_override_t command_zero = ko_make_basic(MOD_MASK_GUI, KC_ASTR, G(KC_0));
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   return TAPPING_TERM;
