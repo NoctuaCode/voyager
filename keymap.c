@@ -12,16 +12,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_DLR,     KC_PLUS,               KC_LBRC,               KC_LCBR,               KC_LPRN,               KC_AMPR,                                        KC_EQL,                  KC_RPRN,               KC_RCBR,               KC_RBRC,               KC_ASTR,               KC_EXLM,
     KC_AT,      KC_SCLN,               KC_COMMA,              KC_DOT,                KC_P,                  KC_Y,                                           KC_F,                    KC_G,                  KC_C,                  KC_R,                  KC_L,                  KC_SLASH,
-    KC_BSLS,    MT(MOD_LGUI, KC_A),    MT(MOD_LALT, KC_O),    MT(MOD_LCTL, KC_E),    MT(MOD_LSFT, KC_U),    MT(KC_HYPER, KC_I),                             MT(KC_MEH, KC_D),        MT(MOD_RSFT, KC_H),    MT(MOD_RCTL, KC_T),    MT(MOD_LALT, KC_N),    MT(MOD_RGUI, KC_S),    KC_MINUS,
+    KC_BSLS,    MT(MOD_LGUI, KC_A),    MT(MOD_LALT, KC_O),    MT(MOD_LCTL, KC_E),    MT(MOD_LSFT, KC_U),    MT(KC_HYPR, KC_I),                              MT(KC_MEH, KC_D),        MT(MOD_RSFT, KC_H),    MT(MOD_RCTL, KC_T),    MT(MOD_LALT, KC_N),    MT(MOD_RGUI, KC_S),    KC_MINUS,
     C(KC_A),    KC_QUOTE,              KC_Q,                  KC_J,                  KC_K,                  KC_X,                                           KC_B,                    KC_M,                  KC_W,                  KC_V,                  KC_Z,                  KC_GRAVE,
-                                                                                           LT(1, KC_BSPC), KC_TAB,                        KC_ENTER,  KC_SPACE
+                                                                                     LT(1, KC_BSPC),        KC_TAB,                                         KC_ENTER,                KC_SPACE
   ),
   [1] = LAYOUT_voyager(
-    RGB_SPD,        RGB_SLD,        RGB_MODE_FORWARD,RGB_TOG,        TOGGLE_LAYER_COLOR,RGB_SPI,                                        KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_PSCR,
-    KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          RGB_HUI,                                        KC_TRANSPARENT, KC_HOME,        KC_UP,          KC_END,         KC_TRANSPARENT, RGB_SAI,
-    KC_TRANSPARENT, MT(MOD_LGUI, KC_F5),MT(MOD_LALT, KC_F6),MT(MOD_LCTL, KC_F7),MT(MOD_LSFT, KC_F8),RGB_HUD,                                        KC_TRANSPARENT, MT(MOD_RSFT, KC_LEFT),MT(MOD_RCTL, KC_DOWN),MT(MOD_LALT, KC_RIGHT),MT(MOD_RGUI, KC_DELETE),RGB_SAD,
-    RGB_VAD,        KC_F9,          KC_F10,         KC_F11,         KC_F12,         RGB_VAI,                                        KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
+    RGB_SPD,         RGB_SLD,              RGB_MODE_FORWARD,     RGB_TOG,              TOGGLE_LAYER_COLOR,   RGB_SPI,                                        KC_BRIGHTNESS_DOWN,  KC_BRIGHTNESS_UP,       KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,     KC_MEDIA_NEXT_TRACK,      KC_PSCR,
+    KC_TRANSPARENT,  KC_F1,                KC_F2,                KC_F3,                KC_F4,                RGB_HUI,                                        KC_TRANSPARENT,      KC_HOME,                KC_UP,                  KC_END,                  KC_TRANSPARENT,           RGB_SAI,
+    KC_TRANSPARENT,  MT(MOD_LGUI, KC_F5),  MT(MOD_LALT, KC_F6),  MT(MOD_LCTL, KC_F7),  MT(MOD_LSFT, KC_F8),  RGB_HUD,                                        KC_TRANSPARENT,      MT(MOD_RSFT, KC_LEFT),  MT(MOD_RCTL, KC_DOWN),  MT(MOD_LALT, KC_RIGHT),  MT(MOD_RGUI, KC_DELETE),  RGB_SAD,
+    RGB_VAD,         KC_F9,                KC_F10,               KC_F11,               KC_F12,               RGB_VAI,                                        KC_AUDIO_VOL_DOWN,   KC_AUDIO_MUTE,          KC_AUDIO_VOL_UP,        KC_TRANSPARENT,          KC_TRANSPARENT,           KC_TRANSPARENT,
+                                                                                       KC_TRANSPARENT,       KC_TRANSPARENT,                                 KC_TRANSPARENT,      KC_TRANSPARENT
   ),
 };
 
@@ -118,6 +118,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 const key_override_t **key_overrides = (const key_override_t *[]){
+  &dollar_tilde,
+  &plus_one,
+  &lbrc_two,
+  &lcbr_three,
+  &lprn_four,
+  &ampr_five,
+  &equal_six,
+  &rprn_seven,
+  &rcbr_eight,
+  &rbrc_nine,
+  &astr_zero,
+  &exlm_percent,
+  &at_circ,
+  &bsls_hash,
+  &grave_pipe,
+  &bspc_del,
+  &enter_esc,
   &alt_one,
   &alt_two,
   &alt_three,
@@ -151,5 +168,5 @@ const key_override_t **key_overrides = (const key_override_t *[]){
   NULL
 };
 
-uint8_t NUM_CUSTOM_SHIFT_KEYS =
-    sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
+// uint8_t NUM_CUSTOM_SHIFT_KEYS =
+//     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
