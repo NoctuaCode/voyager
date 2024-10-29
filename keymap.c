@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
-//#include "features/custom_shift_keys.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
@@ -24,25 +23,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                        KC_TRANSPARENT,       KC_TRANSPARENT,                                 KC_TRANSPARENT,      KC_TRANSPARENT
   ),
 };
-
-//const custom_shift_key_t custom_shift_keys[] = {
-//	{ KC_DLR,  KC_TILD },
-//	{ KC_EXLM, KC_1},
-//	{ KC_LBRC, KC_2 },
-//	{ KC_LCBR, KC_3 },
-//	{ KC_LPRN, KC_4   },
-//	{ KC_AMPR, KC_5   },
-//	{ KC_PERC, KC_6 },
-//	{ KC_RPRN, KC_7 },
-//	{ KC_RCBR, KC_8 },
-//	{ KC_RBRC, KC_9 },
-//	{ KC_ASTR, KC_0 },
-//	{ KC_GRAVE, KC_PIPE },
-//	{ KC_AT, KC_CIRC },
-//	{ KC_BSLS,  KC_HASH },
-//	{ KC_BSPC, KC_DEL },
-  //  { KC_ENTER, KC_ESC }
-//};
 
 // Shift keys
 const key_override_t dollar_tilde = ko_make_basic(MOD_MASK_SHIFT, KC_DLR, KC_TILD);
@@ -105,7 +85,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!process_custom_shift_keys(keycode, record)) { return false; }
   switch (keycode) {
 
     case RGB_SLD:
@@ -145,28 +124,25 @@ const key_override_t **key_overrides = (const key_override_t *[]){
   &alt_eight,
   &alt_nine,
   &alt_zero,
-  &ctrl_one,
-  &ctrl_two,
-  &ctrl_three,
-  &ctrl_four,
-  &ctrl_five,
-  &ctrl_six,
-  &ctrl_seven,
-  &ctrl_eight,
-  &ctrl_nine,
-  &ctrl_zero,
-  &command_one,
-  &command_two,
-  &command_three,
-  &command_four,
-  &command_five,
-  &command_six,
-  &command_seven,
-  &command_eight,
-  &command_nine,
-  &command_zero,
+  // &ctrl_one,
+  // &ctrl_two,
+  // &ctrl_three,
+  // &ctrl_four,
+  // &ctrl_five,
+  // &ctrl_six,
+  // &ctrl_seven,
+  // &ctrl_eight,
+  // &ctrl_nine,
+  // &ctrl_zero,
+  // &command_one,
+  // &command_two,
+  // &command_three,
+  // &command_four,
+  // &command_five,
+  // &command_six,
+  // &command_seven,
+  // &command_eight,
+  // &command_nine,
+  // &command_zero,
   NULL
 };
-
-// uint8_t NUM_CUSTOM_SHIFT_KEYS =
-//     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
