@@ -6,7 +6,7 @@
 #define PERMISSIVE_HOLD
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 180
+#define TAPPING_TERM 200
 
 #define QUICK_TAP_TERM 0
 
