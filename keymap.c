@@ -9,11 +9,11 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_DLR,                  KC_PLUS,               KC_LBRC,               KC_LCBR,               KC_LPRN,               KC_AMPR,                                        KC_EQL,                  KC_RPRN,               KC_RCBR,               KC_RBRC,               KC_ASTR,               KC_EXLM,
-    KC_TAB,                  KC_SCLN,               KC_COMMA,              KC_DOT,                KC_P,                  KC_Y,                                           KC_F,                    KC_G,                  KC_C,                  KC_R,                  KC_L,                  KC_SLASH,
-    KC_AT,                  KC_A,                  KC_O,                  KC_E,                  KC_U,                  MT(KC_HYPR, KC_I),                              MT(KC_MEH, KC_D),        KC_H,                  KC_T,                  KC_N,                  KC_S,                  KC_MINUS,
-    MT(KC_HYPR, KC_BSLS),    KC_QUOTE,              KC_Q,                  KC_J,                  LT(2, KC_K),           KC_X,                                           KC_B,                    LT(1, KC_M),           KC_W,                  KC_V,                  KC_Z,                  MT(KC_MEH, KC_GRAVE),
-                                                                                                  MT(MOD_LSFT, KC_BSPC), MT(MOD_LALT, KC_ENTER),                         MT(MOD_LGUI, KC_ESC),    MT(MOD_LCTL, KC_SPACE)
+    KC_DLR,     KC_PLUS,               KC_LBRC,               KC_LCBR,               KC_LPRN,               KC_AMPR,                                        KC_EQL,                  KC_RPRN,               KC_RCBR,               KC_RBRC,               KC_ASTR,               KC_EXLM,
+    KC_AT,      KC_SCLN,               KC_COMMA,              KC_DOT,                KC_P,                  KC_Y,                                           KC_F,                    KC_G,                  KC_C,                  KC_R,                  KC_L,                  KC_SLASH,
+    KC_ESC,     KC_A,                  KC_O,                  MT(MOD_LGUI, KC_E),    MT(MOD_LALT, KC_U),    MT(KC_HYPR, KC_I),                              MT(KC_MEH, KC_D),        MT(MOD_LALT, KC_H),    MT(MOD_RGUI, KC_T),    KC_N,                  KC_S,                  KC_MINUS,
+    KC_BSLS,    KC_QUOTE,              KC_Q,                  KC_J,                  KC_K,                  KC_X,                                           KC_B,                    KC_M,                  KC_W,                  KC_V,                  KC_Z,                  KC_PIPE,
+                                                                                     MT(MOD_LSFT, KC_BSPC), LT(1, KC_TAB),                                  LT(2, KC_ENTER),         MT(MOD_LCTL, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT,  KC_TRANSPARENT,       KC_TRANSPARENT,       KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,        KC_AUDIO_VOL_UP,                                       KC_BRIGHTNESS_DOWN,  KC_BRIGHTNESS_UP,       KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,     KC_MEDIA_NEXT_TRACK,      KC_PSCR,
@@ -45,6 +45,8 @@ const key_override_t rbrc_nine = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, KC_9);
 const key_override_t astr_zero = ko_make_basic(MOD_MASK_SHIFT, KC_ASTR, KC_0);
 const key_override_t exlm_percent = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, KC_PERC);
 const key_override_t at_circ = ko_make_basic(MOD_MASK_SHIFT, KC_AT, KC_CIRC);
+const key_override_t grave_pipe = ko_make_basic(MOD_MASK_SHIFT, KC_PIPE, KC_GRAVE);
+const key_override_t bsls_hash = ko_make_basic(MOD_MASK_SHIFT, KC_BSLS, KC_HASH);
 
 // Alt keys
 const key_override_t alt_one = ko_make_basic(MOD_MASK_ALT, KC_PLUS, A(KC_1));
@@ -113,6 +115,8 @@ const key_override_t **key_overrides = (const key_override_t *[]){
   &astr_zero,
   &exlm_percent,
   &at_circ,
+  &grave_pipe,
+  &bsls_hash,
   &alt_one,
   &alt_two,
   &alt_three,
