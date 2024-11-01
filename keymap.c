@@ -9,18 +9,18 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_DLR,     KC_PLUS,               KC_LBRC,               KC_LCBR,               KC_LPRN,               KC_AMPR,                                        KC_EQL,                  KC_RPRN,               KC_RCBR,               KC_RBRC,               KC_ASTR,               KC_EXLM,
-    KC_AT,      KC_SCLN,               KC_COMMA,              KC_DOT,                KC_P,                  KC_Y,                                           KC_F,                    KC_G,                  KC_C,                  KC_R,                  KC_L,                  KC_SLASH,
-    KC_ESC,     KC_A,                  KC_O,                  MT(MOD_LGUI, KC_E),    MT(MOD_LALT, KC_U),    MT(KC_HYPR, KC_I),                              MT(KC_MEH, KC_D),        MT(MOD_LALT, KC_H),    MT(MOD_RGUI, KC_T),    KC_N,                  KC_S,                  KC_MINUS,
-    KC_BSLS,    KC_QUOTE,              KC_Q,                  KC_J,                  KC_K,                  KC_X,                                           KC_B,                    KC_M,                  KC_W,                  KC_V,                  KC_Z,                  KC_PIPE,
-                                                                                     MT(MOD_LSFT, KC_BSPC), LT(1, KC_TAB),                                  LT(2, KC_ENTER),         MT(MOD_LCTL, KC_SPACE)
+    KC_DLR,     KC_PLUS,       KC_LBRC,       KC_LCBR,       KC_LPRN,         KC_AMPR,                                 KC_EQL,       KC_RPRN,       KC_RCBR,       KC_RBRC,       KC_ASTR,          KC_EXLM,
+    KC_AT,      KC_Q,          KC_W,          KC_E,          KC_R,            KC_T,                                    KC_Y,         KC_U,          KC_I,          KC_O,          KC_P,             KC_QUOTE,
+    KC_BSLS,    LGUI_T(KC_A),  LALT_T(KC_S),  LSFT_T(KC_D),  LCTL_T(KC_F),    HYPR_T(KC_G),                            MEH_T(KC_H),  RCTL_T(KC_J),  RSFT_T(KC_K),  LALT_T(KC_L),  RGUI_T(KC_SCLN),  KC_MINUS,
+    KC_ESC,     KC_Z,          KC_X,          KC_C,          KC_V,            KC_B,                                    KC_N,         KC_M,          KC_COMMA,      KC_PERIOD,     KC_SLASH,         KC_PIPE,
+                                                             LT(1, KC_BSPC),  KC_TAB,                                  KC_ENTER,     LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
-    KC_TRANSPARENT,  KC_TRANSPARENT,       KC_TRANSPARENT,       KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,        KC_AUDIO_VOL_UP,                                       KC_BRIGHTNESS_DOWN,  KC_BRIGHTNESS_UP,       KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,     KC_MEDIA_NEXT_TRACK,      KC_PSCR,
-    KC_TRANSPARENT,  KC_F1,                KC_F2,                KC_F3,                KC_F4,                KC_TRANSPARENT,                                        KC_TRANSPARENT,      KC_HOME,                KC_UP,                  KC_END,                  KC_TRANSPARENT,           RGB_SAI,
-    KC_TRANSPARENT,  MT(MOD_LGUI, KC_F5),  MT(MOD_LALT, KC_F6),  MT(MOD_LCTL, KC_F7),  MT(MOD_LSFT, KC_F8),  KC_TRANSPARENT,                                        KC_TRANSPARENT,      MT(MOD_RSFT, KC_LEFT),  MT(MOD_RCTL, KC_DOWN),  MT(MOD_LALT, KC_RIGHT),  MT(MOD_RGUI, KC_DELETE),  RGB_SAD,
-    KC_TRANSPARENT,  KC_F9,                KC_F10,               KC_F11,               KC_F12,               KC_TRANSPARENT,                                        KC_TRANSPARENT,      KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,          KC_TRANSPARENT,           KC_TRANSPARENT,
-                                                                                       KC_TRANSPARENT,       KC_TRANSPARENT,                                        KC_TRANSPARENT,      KC_TRANSPARENT
+    KC_TRANSPARENT,  KC_TRANSPARENT,  KC_TRANSPARENT,  KC_AUDIO_VOL_DOWN,  KC_AUDIO_MUTE,   KC_AUDIO_VOL_UP,                                       KC_BRIGHTNESS_DOWN,  KC_BRIGHTNESS_UP,  KC_MEDIA_PREV_TRACK,  KC_MEDIA_PLAY_PAUSE,  KC_MEDIA_NEXT_TRACK,  KC_PSCR,
+    KC_TRANSPARENT,  KC_F1,           KC_F2,           KC_F3,              KC_F4,           KC_TRANSPARENT,                                        KC_TRANSPARENT,      KC_HOME,           KC_UP,                KC_END,               KC_TRANSPARENT,           RGB_SAI,
+    KC_TRANSPARENT,  LGUI_T(KC_F5),   LALT_T(KC_F6),   LSFT_T(KC_F7),      LCTL_T(KC_F8),   KC_TRANSPARENT,                                        KC_LEFT,             RCTL_T(KC_DOWN),   RSFT_T(KC_UP),        LALT_T(KC_RIGHT),     RGUI_T(KC_DELETE),  RGB_SAD,
+    KC_TRANSPARENT,  KC_F9,           KC_F10,          KC_F11,             KC_F12,          KC_TRANSPARENT,                                        KC_TRANSPARENT,      KC_TRANSPARENT,    KC_TRANSPARENT,       KC_TRANSPARENT,       KC_TRANSPARENT,           KC_TRANSPARENT,
+                                                                           KC_TRANSPARENT,  KC_TRANSPARENT,                                        KC_TRANSPARENT,      KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,   KC_TRANSPARENT, KC_TRANSPARENT,                               KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
