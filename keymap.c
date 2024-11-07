@@ -9,10 +9,10 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_DLR,     KC_PLUS,       KC_LBRC,       KC_LCBR,       KC_LPRN,         KC_AMPR,                                 KC_EQL,       KC_RPRN,       KC_RCBR,       KC_RBRC,       KC_ASTR,          KC_EXLM,
-    KC_AT,      KC_Q,          KC_W,          KC_E,          KC_R,            KC_T,                                    KC_Y,         KC_U,          KC_I,          KC_O,          KC_P,             KC_QUOTE,
-    KC_BSLS,    LGUI_T(KC_A),  LALT_T(KC_S),  LSFT_T(KC_D),  LCTL_T(KC_F),    MEH_T(KC_G),                             HYPR_T(KC_H), RCTL_T(KC_J),  RSFT_T(KC_K),  LALT_T(KC_L),  RGUI_T(KC_SCLN),  KC_MINUS,
-    KC_ESC,     KC_Z,          KC_X,          KC_C,          KC_V,            KC_B,                                    KC_N,         KC_M,          KC_COMMA,      KC_DOT,        KC_SLASH,         KC_PIPE,
+    KC_DLR,     KC_PLUS,       KC_LBRC,       KC_LCBR,       KC_LPRN,         KC_AMPR,                                 KC_EQL,       KC_RPRN,       KC_RCBR,       KC_RBRC,       KC_ASTR,       KC_EXLM,
+    KC_AT,      KC_SCLN,       KC_COMMA,      KC_DOT,        KC_P,            KC_Y,                                    KC_F,         KC_G,          KC_C,          KC_R,          KC_L,          KC_SLASH,
+    KC_BSLS,    LGUI_T(KC_A),  LALT_T(KC_O),  LSFT_T(KC_E),  LCTL_T(KC_U),    HYPR_T(KC_I),                            MEH_T(KC_D),  RCTL_T(KC_H),  RSFT_T(KC_T),  LALT_T(KC_N),  RGUI_T(KC_S),  KC_MINUS,
+    KC_ESC,     KC_QUOTE,      KC_Q,          KC_J,          KC_K,            KC_X,                                    KC_B,         KC_M,          KC_W,          KC_V,          KC_Z,          KC_PIPE,
                                                              LT(1, KC_BSPC),  KC_TAB,                                  KC_ENTER,     LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -30,10 +30,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                       KC_0,           KC_TRANSPARENT,                               KC_TRANSPARENT, KC_TRANSPARENT
     ),
   [3] = LAYOUT_voyager(
-    KC_DLR,     KC_PLUS,       KC_LBRC,       KC_LCBR,       KC_LPRN,         KC_AMPR,                                 KC_EQL,       KC_RPRN,       KC_RCBR,       KC_RBRC,       KC_ASTR,       KC_EXLM,
-    KC_AT,      KC_SCLN,       KC_COMMA,      KC_DOT,        KC_P,            KC_Y,                                    KC_F,         KC_G,          KC_C,          KC_R,          KC_L,          KC_SLASH,
-    KC_BSLS,    LGUI_T(KC_A),  LALT_T(KC_O),  LSFT_T(KC_E),  LCTL_T(KC_U),    HYPR_T(KC_I),                            MEH_T(KC_D),  RCTL_T(KC_H),  RSFT_T(KC_T),  LALT_T(KC_N),  RGUI_T(KC_S),  KC_MINUS,
-    KC_ESC,     KC_QUOTE,      KC_Q,          KC_J,          KC_K,            KC_X,                                    KC_B,         KC_M,          KC_W,          KC_V,          KC_Z,          KC_PIPE,
+    KC_DLR,     KC_PLUS,       KC_LBRC,       KC_LCBR,       KC_LPRN,         KC_AMPR,                                 KC_EQL,       KC_RPRN,       KC_RCBR,       KC_RBRC,       KC_ASTR,          KC_EXLM,
+    KC_AT,      KC_Q,          KC_W,          KC_E,          KC_R,            KC_T,                                    KC_Y,         KC_U,          KC_I,          KC_O,          KC_P,             KC_QUOTE,
+    KC_BSLS,    LGUI_T(KC_A),  LALT_T(KC_S),  LSFT_T(KC_D),  LCTL_T(KC_F),    MEH_T(KC_G),                             HYPR_T(KC_H), RCTL_T(KC_J),  RSFT_T(KC_K),  LALT_T(KC_L),  RGUI_T(KC_SCLN),  KC_MINUS,
+    KC_ESC,     KC_Z,          KC_X,          KC_C,          KC_V,            KC_B,                                    KC_N,         KC_M,          KC_COMMA,      KC_DOT,        KC_SLASH,         KC_PIPE,
                                                              LT(1, KC_BSPC),  KC_TAB,                                  KC_ENTER,     LT(2, KC_SPACE)
   ),
 };
